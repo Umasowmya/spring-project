@@ -1,0 +1,16 @@
+com/springproject/demo/rest/StudentRestController.class
+com/springproject/demo/service/StudentServiceImpl.class
+com/springproject/demo/dao/StudentRepository.class
+com/springproject/demo/rest/BookRestController.class
+com/springproject/demo/service/StudentService.class
+com/springproject/demo/entity/Book.class
+com/springproject/demo/controller/LoginController.class
+com/springproject/demo/config/SecurityConfig.class
+com/springproject/demo/DemoApplication.class
+com/springproject/demo/service/BookService.class
+com/springproject/demo/dao/BookRepository.class
+com/springproject/demo/controller/StudentController.class
+com/springproject/demo/config/CustomAccessDeniedHandler.class
+com/springproject/demo/controller/BookController.class
+com/springproject/demo/entity/Student.class
+com/springproject/demo/service/BookServiceImpl.class

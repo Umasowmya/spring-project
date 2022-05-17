@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BookRestController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo</a> &gt; <a href="index.source.html" class="el_package">com.springproject.demo.rest</a> &gt; <span class="el_source">BookRestController.java</span></div><h1>BookRestController.java</h1><pre class="source lang-java linenums">package com.springproject.demo.rest;
+
+import com.springproject.demo.entity.Book;
+import com.springproject.demo.service.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping(&quot;/api&quot;)
+public class BookRestController {
+
+	private BookService bookService;
+
+	@Autowired
+<span class="fc" id="L17">	public BookRestController(BookService theEmployeeService) {</span>
+<span class="fc" id="L18">		bookService = theEmployeeService;</span>
+<span class="fc" id="L19">	}</span>
+	
+	// expose &quot;/employees&quot; and return list of employees
+	@GetMapping(&quot;/books&quot;)
+	public List&lt;Book&gt; findAll() {
+<span class="nc" id="L24">		return bookService.findAll();</span>
+	}
+
+	@GetMapping(&quot;/books/{bookId}&quot;)
+	public Book getBook(@PathVariable int bookId) {
+
+<span class="nc" id="L30">		Book theBook = bookService.findById(bookId);</span>
+
+<span class="nc bnc" id="L32" title="All 2 branches missed.">		if (theBook == null) {</span>
+<span class="nc" id="L33">			throw new RuntimeException(&quot;Student id not found - &quot; + bookId);</span>
+		}
+
+<span class="nc" id="L36">		return theBook;</span>
+	}
+
+	// add mapping for POST /employees - add new employee
+
+	@PostMapping(&quot;/books&quot;)
+	public Book addEmployee(@RequestBody Book theBook) {
+
+		// also just in case they pass an id in JSON ... set id to 0
+		// this is to force a save of new item ... instead of update
+
+<span class="nc" id="L47">		theBook.setId(0);</span>
+
+<span class="nc" id="L49">		bookService.save(theBook);</span>
+
+<span class="nc" id="L51">		return theBook;</span>
+	}
+
+	@PutMapping(&quot;/books&quot;)
+	public Book updateBook(@RequestBody Book theBook) {
+
+<span class="nc" id="L57">		bookService.save(theBook);</span>
+
+<span class="nc" id="L59">		return theBook;</span>
+	}
+
+	// add mapping for DELETE /employees/{employeeId} - delete employee
+
+	@DeleteMapping(&quot;/books/{bookId}&quot;)
+	public String deleteEmployee(@PathVariable int bookId) {
+
+<span class="nc" id="L67">		 Book tempBook = bookService.findById(bookId);</span>
+
+		// throw exception if null
+
+<span class="nc bnc" id="L71" title="All 2 branches missed.">		if (tempBook == null) {</span>
+<span class="nc" id="L72">			throw new RuntimeException(&quot;book id not found - &quot; + bookId);</span>
+		}
+
+<span class="nc" id="L75">		bookService.deleteById(bookId);</span>
+
+<span class="nc" id="L77">		return &quot;Deleted book id - &quot; + bookId;</span>
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

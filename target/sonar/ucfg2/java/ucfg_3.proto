@@ -1,0 +1,46 @@
+
+†com.springproject.demo.service.StudentServiceImpl#save(Lcom/springproject/demo/entity/Student;)Lcom/springproject/demo/entity/Student;m
+c/home/umaS/IdeaProjects/demo-4/src/main/java/com/springproject/demo/service/StudentServiceImpl.java2 2("startingBlock*™
+startingBlockm
+c/home/umaS/IdeaProjects/demo-4/src/main/java/com/springproject/demo/service/StudentServiceImpl.java2 2(+Ó
+Ð
+m
+c/home/umaS/IdeaProjects/demo-4/src/main/java/com/springproject/demo/service/StudentServiceImpl.java1 1(
+%2"
+__annotate*
+java.lang.Override*5
+3
+
+theStudent%com.springproject.demo.entity.Student½
+º
+m
+c/home/umaS/IdeaProjects/demo-4/src/main/java/com/springproject/demo/service/StudentServiceImpl.java2  2(*3
+
+theStudent%com.springproject.demo.entity.Student"__annotation*
+
+%2*
+1* 
+1m
+c/home/umaS/IdeaProjects/demo-4/src/main/java/com/springproject/demo/service/StudentServiceImpl.java3 3(ú
+÷
+m
+c/home/umaS/IdeaProjects/demo-4/src/main/java/com/springproject/demo/service/StudentServiceImpl.java3 3(2
+%0,com.springproject.demo.dao.StudentRepository"__id*L*J3
+1com.springproject.demo.service.StudentServiceImpl"
+studentRepository…‚
+m
+c/home/umaS/IdeaProjects/demo-4/src/main/java/com/springproject/demo/service/StudentServiceImpl.java3 3(*+
+%1%com.springproject.demo.entity.Student"]org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;*4
+2
+%0,com.springproject.demo.dao.StudentRepository*5
+3
+
+theStudent%com.springproject.demo.entity.Student2save(Ljava/lang/Object;)"¦
+m
+c/home/umaS/IdeaProjects/demo-4/src/main/java/com/springproject/demo/service/StudentServiceImpl.java4 4(5
+3
+
+theStudent%com.springproject.demo.entity.Student:3
+
+theStudent%com.springproject.demo.entity.StudentB53
+1com.springproject.demo.service.StudentServiceImpl

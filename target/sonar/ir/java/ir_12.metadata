@@ -1,0 +1,1 @@
+com.springproject.demo.service.BookServiceImpl#save(Lcom/springproject/demo/entity/Book;)Lcom/springproject/demo/entity/Book;

@@ -1,0 +1,7 @@
+organization=umasowmya
+projectKey=demo-1
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.29017
+dashboardUrl=https://sonarcloud.io/dashboard?id=demo-1
+ceTaskId=AYDMMjafmBsuK9y7NVKJ
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AYDMMjafmBsuK9y7NVKJ

@@ -1,0 +1,121 @@
+<!--
+
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>Add Student to the Book</title>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h3>Add Student Directory</h3>
+    <hr>
+
+    <p class="h4 mb-4">Save Student</p>
+
+    <form action="#" th:action="@{/book/save_student}"
+          th:object="${book}" method="POST">
+
+        <div class="form-group-row">
+            <label class="col-form-label  col-sm-4">Student-list</label>
+            <div class="col-sm-8 text-left">
+                <th:block  th:each ="student :${student_list}">
+                    <div>
+                        <input type="checkbox"  th:filed="*{students}" th:text="${student.firstName}" th:value="${student.id}"/>
+                    </div>
+                </th:block>
+            </div>
+
+        </div>
+
+            <button type="submit" class="btn btn-info col-2">Save</button>
+
+    </form>
+
+
+
+    <hr>
+    <a th:href="@{/student/list}">Back to Employees List</a>
+
+</div>
+</body>
+
+</html>
+
+-->
+
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Save Book</title>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h3>Book Directory</h3>
+    <hr>
+
+    <p class="h4 mb-4">Save Book</p>
+
+    <form action="#" th:action="@{/book/save}"
+          th:object="${book}" method="POST">
+
+        <!-- Add hidden form field to handle update -->
+        <input type="hidden" th:field="*{id}" />
+
+        <input type="text" th:field="*{name}"
+               class="form-control mb-4 col-4" placeholder="Book name" />
+
+        <div class="form-group-row">
+            <label class="col-form-label  col-sm-4">Student-list</label>
+            <div class="col-sm-8 text-left">
+                <th:block  th:each ="student :${student_list}">
+                    <div>
+                        <input type="checkbox"  th:field="*{students}" th:text="${student.firstName}" th:value="${student.id}"/>
+                    </div>
+                </th:block>
+            </div>
+
+        </div>
+
+
+
+        <button type="submit" class="btn btn-info col-2">Save</button>
+
+    </form>
+
+    <hr>
+    <a th:href="@{/book/list}">Back to Book List</a>
+
+</div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
